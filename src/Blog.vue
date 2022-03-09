@@ -1,5 +1,5 @@
 <template>
-  <News />
+  <h1>Mon super blog</h1>
 </template>
 
 <script setup lang="ts"></script>

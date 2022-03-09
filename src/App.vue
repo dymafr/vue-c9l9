@@ -1,25 +1,15 @@
 <template>
-  <button @click="count++">{{ count }}</button>
-  <div>
+  <button @click.once="display = true">display</button>
+  <div v-if="display">
     <Blog />
   </div>
 </template>
 
 <script setup lang="ts">
-import { toRef, reactive, isReactive, isRef } from 'vue';
+import { ref } from 'vue';
 import Blog from './Blog.vue';
 
-const state = reactive({
-  count: 0,
-  user: {},
-});
-
-const count = toRef(state, 'count');
-
-console.log(isReactive(state));
-console.log(isReactive(count));
-console.log(isRef(state));
-console.log(isRef(count));
+const display = ref(false);
 </script>
 
 <style scoped lang="scss"></style>
